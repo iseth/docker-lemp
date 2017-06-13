@@ -1,0 +1,39 @@
+version: '3'
+services:
+  db:
+    build: ./images/mariadb
+    container_name: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: examplepass
+    networks:
+      - back
+    volumes:
+      - ./db/mariadb:/var/lib/mysql
+    restart: always
+
+  phpmyadmin:
+    build: ./images/phpmyadmin
+    networks:
+      - back
+    ports:
+      - 8181:80
+    environment:
+      MYSQL_USERNAME: root
+      MYSQL_ROOT_PASSWORD: examplepass
+      PMA_HOST: db
+
+  nginx-php-fpm:
+    build: ./images/nginx-php-fpm
+    restart: always
+    networks:
+      - back
+    links:
+      - db:mysql
+    volumes:
+      - ./www:/var/www/html
+    ports:
+      - 8080:80
+
+networks:
+  # front:
+  back:

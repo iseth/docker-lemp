@@ -1,0 +1,2 @@
+# exclude the db data
+/foo/*
