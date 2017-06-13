@@ -6,9 +6,9 @@ testing docker container deployment for web app on apache 2
 ## FOLLOW THE STEPS BELOW
 
 1. Download and cd into the REPO
-> git clone https://github.com/iseth/docker-lemp.git && cd docker-lemp
+` git clone https://github.com/iseth/docker-lemp.git && cd docker-lemp`
 
 2. Start up the Stack
-> docker-compose up -d
+` docker-compose up -d`
 
 3. 
