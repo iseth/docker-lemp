@@ -1,18 +1,14 @@
-# dockerwebapp
+# Docker LEMP stack
 testing docker container deployment for web app on apache 2
 
-# When deploying this you need to script the following commands
+## When deploying this you need to script the following commands
 
-# FOLLOW THE STEPS BELOW
+## FOLLOW THE STEPS BELOW
 
-1. Remove existing container
+1. Download and cd into the REPO
+> git clone https://github.com/iseth/docker-lemp.git && cd docker-lemp
 
-> docker rm -f runningDWA
+2. Start up the Stack
+> docker-compose up -d
 
-2. Build new container
-> docker build -t dockerwebapp .
-
-3. Run the docker container that has just been built
-> docker run -d -p 80:80 --name runningDWA dockerwebapp
-OR
-> docker run -d -p 80:80 --name runningDWA -v /Users/anthonygrant/Documents/docker/dockerwebapp/webapp:/var/www/html dockerwebapp
+3. 
