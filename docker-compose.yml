@@ -30,7 +30,7 @@ services:
     links:
       - db:mysql
     volumes:
-      - ./www:/var/www/html
+      - ./www:/var/www/html:ro
     ports:
       - 8080:80
 
