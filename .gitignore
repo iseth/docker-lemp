@@ -1,2 +1,4 @@
 # exclude the db data
-/foo/*
+.DS_Store
+db/*
+docker-compose.yml
