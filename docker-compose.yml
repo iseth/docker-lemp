@@ -4,11 +4,11 @@ services:
     build: ./images/mariadb
     container_name: mariadb
     environment:
-      MYSQL_ROOT_PASSWORD: examplepass
+      MYSQL_ROOT_PASSWORD: 2EuFMeqZz3fbPTDgqaDgEcn
     networks:
       - back
     volumes:
-      - ./db/mariadb:/var/lib/mysql
+      - /home/db/mariadb:/var/lib/mysql
     restart: always
 
   phpmyadmin:
@@ -19,7 +19,7 @@ services:
       - 8181:80
     environment:
       MYSQL_USERNAME: root
-      MYSQL_ROOT_PASSWORD: examplepass
+      MYSQL_ROOT_PASSWORD: 2EuFMeqZz3fbPTDgqaDgEcn
       PMA_HOST: db
 
   nginx-php-fpm:
@@ -30,9 +30,9 @@ services:
     links:
       - db:mysql
     volumes:
-      - ./www:/var/www/html:ro
+      - /home/www/users:/var/www/html
     ports:
-      - 8080:80
+      - 80:80
 
 networks:
   # front:

@@ -1,4 +1,9 @@
+<<<<<<< Updated upstream
 # exclude the db data
 .DS_Store
 db/*
 docker-compose.yml
+=======
+# exclude the db data/foo/*
+
+>>>>>>> Stashed changes
